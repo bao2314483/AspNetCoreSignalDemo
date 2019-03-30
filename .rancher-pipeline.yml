@@ -1,0 +1,9 @@
+stages:
+- name: test
+  steps:
+  - runScriptConfig:
+      image: java:8
+      shellScript: "curl 'https://oapi.dingtalk.com/robot/send?access_token=a2713bc4259a49fd78b07f975377dbdd1376ce6898f8ab8a0c8279f8af7a1563'
+        \\\n   -H 'Content-Type: application/json' \\\n   -d '\n  {\"msgtype\": \"text\",
+        \n    \"text\": {\n        \"content\": \"我就是我, 是不一样的烟火\"\n     }\n  }'"
+timeout: 60
